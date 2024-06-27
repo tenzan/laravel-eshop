@@ -1,0 +1,21 @@
+models:
+  Product:
+    name: string
+    price: integer
+    order_id: unsignedInteger
+    relationships:
+      belongsTo: Order
+
+  Order:
+    tracking_number: string
+    delivery_date: date
+    delivery_time: string
+    relationships:
+      hasMany: Product
+      belongsTo: Customer
+
+  Customer:
+    name: stringØ
+    relationships:
+      hasMany: Order
+
